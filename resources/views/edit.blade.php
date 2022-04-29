@@ -9,41 +9,43 @@
 </head>
 <body>
 <ul class="nav">
+    
         <li class="nav-item">
             <a class="nav-link active fs-2" aria-current="page" href="/create">+</a>
         </li>
     </ul>
+    @if(isset($person))
     <div class="container">
     <a class="btn btn-primary" href="/index">返回</a>
         <form action="/create" method="POST">
         @csrf
         <div class="mb-3">
             <label class="form-label">姓名</label>
-            <input type="text" class="form-control" id="name" name="name" >
+            <input type="text" class="form-control" id="name" name="name" value="{{$person->name}}">
         </div>
         <div class="mb-3">
             <label  class="form-label">身份証號</label>
-            <input type="text" class="form-control" id="" name="user_id" >
+            <input type="text" class="form-control" id="" name="user_id" value="{{$person->user_id}}">
         </div>
         <div class="mb-3">
             <label  class="form-label">生日</label>
-            <input type="" class="form-control" id="" name="birth" >
+            <input type="" class="form-control" id="" name="birth" value="{{$person->birth}}">
         </div>
         <div class="mb-3">
             <label  class="form-label">電話</label>
-            <input type="text" class="form-control" id="" name="tel" >
+            <input type="text" class="form-control" id="" name="tel" value="{{$person->tel}}">
         </div>
         <div class="mb-3">
             <label  class="form-label">郵遞區號</label>
-            <input type="text" class="form-control" id="" name="postalCode" >
+            <input type="text" class="form-control" id="" name="postalCode" value="{{$person->postalCode}}">
         </div>
         <div class="mb-3">
             <label  class="form-label">住址</label>
-            <input type="text" class="form-control" id="" name="address">
+            <input type="text" class="form-control" id="" name="address"value="{{$person->address}}" >
         </div>
             <button type="submit" class="btn btn-primary">新增</button>
         </form>
-
+@endif
     </div>
 </body>
 

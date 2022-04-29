@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index','indexController@index');
-Route::get('/editor','indexController@editor');
-Route::post('/create','indexController@create');
+
+Route::get('/index','indexController@index')->name("index");
+Route::get('/create','indexController@create_page')->name('create');
+Route::post('/create','indexController@create_data');
+
+
+Route::delete('person/{user_id}','indexController@destory');
+Route::get('/edit','indexController@edit_page');
+
+Route::post('/edit/{user_id}/updata','indexController@update');
+
